@@ -28,7 +28,9 @@ module Unit4Multivers
       @consumer_secret = opts[:consumer_secret]
 
       @token = opts[:token]
-      @secret = opts[:secret]
+      @secret = @consumer_secret
+
+      @refresh_token = opts[:refresh_token]
 
       @proxy = opts[:proxy] if opts[:proxy]
       @database_name = opts[:database_name]
@@ -37,13 +39,13 @@ module Unit4Multivers
     end
 
 
-    def authorize(token, secret, opts={})
-      request_token = OAuth2::RequestToken.new(client, token, secret)
-      @access_token = request_token.get_access_token(opts)
-      @token = @access_token.token
-      @secret = @access_token.secret
-      @access_token
-    end
+    # def authorize(token, secret, opts={})
+    #   request_token = OAuth2::RequestToken.new(client, token, secret)
+    #   @access_token = request_token.get_access_token(opts)
+    #   @token = @access_token.token
+    #   @secret = @access_token.secret
+    #   @access_token
+    # end
 
 
     def reconnect(token, secret)
@@ -97,7 +99,7 @@ module Unit4Multivers
       end
 
       def access_token
-        @access_token #||= OAuth2::AccessToken.new(oauth_client, @token, @secret)
+        @access_token ||= OAuth2::AccessToken.new(oauth_client, @token, @secret, { refresh_token: @refresh_token })
       end
 
       def get(path, headers={})

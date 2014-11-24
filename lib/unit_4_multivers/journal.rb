@@ -23,5 +23,15 @@ module Unit4Multivers
 
       get "/#{opts.fetch(:database)}/JournalInfoList", opts
     end
+
+    # GET api/{database}/JournalEntryLineInfoList/{fiscalYear}/{period}/{accountid}
+    # Gets a list of JournalEntryLineInfo that matches the specified criteria
+
+    def journal_entry_line_info_list(opts = {})
+      required = [:database, :fiscal_year, :period, :account_id ]
+      check_required_parameters(required, opts)
+
+      get "/#{opts.fetch(:database)}/JournalEntryLineInfoList/#{opts.fetch(:fiscal_year)}/#{opts.fetch(:period)}/#{opts.fetch(:account_id)}", opts
+    end
   end
 end
