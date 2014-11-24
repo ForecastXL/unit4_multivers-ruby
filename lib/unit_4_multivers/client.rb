@@ -93,7 +93,7 @@ module Unit4Multivers
     private
       def oauth_client
         @oauth_client ||= OAuth2::Client.new(@consumer_key, @consumer_secret,
-            :site => { :url => "https://sandbox.api.online.unit4.nl/#{@api_version}/" },
+            :site => { :url => "https://api.online.unit4.nl/#{@api_version}/" },
             :token_url => 'OAuth/Token/',
             :authorize_url => 'OAuth/Authorize/')
       end
