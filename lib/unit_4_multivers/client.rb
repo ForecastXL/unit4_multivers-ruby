@@ -33,7 +33,7 @@ module Unit4Multivers
       @refresh_token = opts[:refresh_token]
 
       @proxy = opts[:proxy] if opts[:proxy]
-      @database_name = opts[:database_name]
+      @database = opts[:database]
 
       @api_version = API_VERSION
     end
@@ -99,7 +99,7 @@ module Unit4Multivers
       end
 
       def access_token
-        @access_token ||= OAuth2::AccessToken.new(oauth_client, @token, @secret, { refresh_token: @refresh_token })
+        @access_token ||= OAuth2::AccessToken.new(oauth_client, @token, { refresh_token: @refresh_token })
       end
 
       def get(path, headers={})
