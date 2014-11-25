@@ -4,7 +4,7 @@ module Unit4Multivers
       required = [:database]
       check_required_parameters(required, opts)
 
-      get "/#{opts.fetch(:database)}/DepartmentNVL}", opts
+      get "/#{opts.fetch(:database)}/DepartmentNVL", opts
     end
   end
 end
