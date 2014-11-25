@@ -9,7 +9,7 @@ require "unit_4_multivers/version"
 
 module Unit4Multivers
   class Client
-    API_VERSION = 'v14'
+    API_VERSION = 'V14'
     # Sets or gets the api_version to be used in API calls
     #"
     # @return [String]
@@ -103,7 +103,7 @@ module Unit4Multivers
       end
 
       def get(path, headers={})
-        @access_token.refresh_token! if access_token.expired?
+        refresh_token! if access_token.expired?
         extract_response_body raw_get(path, headers)
       end
 
