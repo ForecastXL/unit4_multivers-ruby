@@ -10,7 +10,7 @@ require "unit_4_multivers/version"
 
 module Unit4Multivers
   class Client
-    API_VERSION = 'V14'
+    API_VERSION = 'V17'
     # Sets or gets the api_version to be used in API calls
     #"
     # @return [String]
