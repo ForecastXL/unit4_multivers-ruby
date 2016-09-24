@@ -6,7 +6,7 @@ Work in progress: Gem handling the REST API on https://api.online.unit4.nl/V14 w
 
 Add this line to your application's Gemfile:
 
-    gem 'unit4_multivers'
+    gem 'unit4_multivers-ruby'
 
 And then execute:
 
@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install unit4_multivers
+    $ gem install unit4_multivers-ruby
 
 ## Usage
 
@@ -64,19 +64,15 @@ If you need to call a url that isn't covered by the gem's methods, make a custom
 
     client.custom_request(uri, opts = {})
 
-
     client.custom_request("/AdministrationNVL")
 
 If you want to add params to your query, add them to the params hash in the method options (this works the same for all available methods):
 
     client.custom_request("/AdministrationNVL", { params: { fiscalYear: 'XXXX' } })
 
-
-
-
 ## Contributing
 
-1. Fork it ( https://github.com/LaurensN/unit_4_multivers/fork )
+1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
