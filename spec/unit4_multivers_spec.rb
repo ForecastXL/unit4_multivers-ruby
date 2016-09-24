@@ -3,8 +3,8 @@ require 'spec_helper'
 describe Unit4Multivers do
   before do
     @client = Unit4Multivers::Client.new({
-      :consumer_key => '12345',
-      :consumer_secret => '67890'
+      consumer_key: '12345',
+      consumer_secret: '67890'
     })
   end
 

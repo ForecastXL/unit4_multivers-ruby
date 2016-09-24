@@ -6,7 +6,7 @@ Work in progress: Gem handling the REST API on https://api.online.unit4.nl/V14 w
 
 Add this line to your application's Gemfile:
 
-    gem 'unit_4_multivers'
+    gem 'unit4_multivers'
 
 And then execute:
 
@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install unit_4_multivers
+    $ gem install unit4_multivers
 
 ## Usage
 

@@ -14,8 +14,6 @@ module Unit4Multivers
       get "/#{opts.fetch(:database)}/SupplierInfoList", opts
     end
 
-
-
     # API Description
     # GET api/{database}/SupplierInvoiceInfoList/OpenInvoices/{id}
     # Gets a list of SupplierInvoiceInfo that matches the specified criteria
@@ -46,7 +44,7 @@ module Unit4Multivers
     # Gets a list of SupplierInvoiceInfo that matches the specified criteria
 
     def supplier_invoice_info_list(opts = {})
-      get "/SupplierInvoiceInfoList", opts
+      get '/SupplierInvoiceInfoList', opts
     end
   end
 end

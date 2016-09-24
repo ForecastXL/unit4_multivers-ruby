@@ -1,6 +1,5 @@
 module Unit4Multivers
   class Client
-
     def customer_info(opts = {})
       required = [:database, :customer_id]
       check_required_parameters(required, opts)
@@ -21,7 +20,5 @@ module Unit4Multivers
 
       get "/#{opts.fetch(:database)}/CustomerInvoiceInfoList/#{id}", opts
     end
-
-
   end
 end
